@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*frame by frame animation으로 지구본 돌아가는거 구현*/
+      @keyframes space-ani {
+        100% {
+          background-position: -2550px 0;
+        }
+      }
+      .spaceship {
+        width: 150px;
+        height: 150px;
+        /*background: url() no-repeat 0 0 cover;*/
+        animation: space-ani 1s infinite steps(17);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spaceship"></div>
+  </body>
+</html>
