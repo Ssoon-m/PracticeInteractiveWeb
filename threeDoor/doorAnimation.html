@@ -109,20 +109,33 @@
       (function () {
         const stageElem = document.querySelector('.stage');
 
+        //현재 활성화된 아이템을 저장
+        let currentItem;
+
+        function activate(elem) {
+          /* parentNode는 부모 노드에 접근하게 된다. */
+
+          elem.classList.add('door-opened');
+          currentItem = elem;
+        }
+
+        function inactivate(elem) {
+          elem.classList.remove('door-opened');
+        }
         function doorHandler(e) {
           const targetElem = e.target;
-          const currentItem = document.querySelector('.door-opened');
-
+          //비활성화
           if (currentItem) {
-            currentItem.classList.remove('door-opened');
+            inactivate(currentItem);
           }
-          if (e.target.classList.contains('door-body')) {
-            /* parentNode는 부모 노드에 접근하게 된다. */
-            targetElem.parentNode.classList.add('door-opened');
+          //활성화
+          if (targetElem.classList.contains('door-body')) {
+            activate(targetElem.parentNode);
           }
         }
 
         stageElem.addEventListener('click', doorHandler);
+        activate(document.querySelector('.door:first-child'));
       })();
     </script>
   </body>
