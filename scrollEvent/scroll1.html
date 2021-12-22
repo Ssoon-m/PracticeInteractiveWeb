@@ -53,16 +53,43 @@
         Optio laboriosam, repellendus laborum.
       </p>
       <figure class="ilbuni">
-        <img src="../images/ilbuni_0.png" alt="일분이">
+        <img src="../images/ilbuni_0.png" alt="일분이" />
       </figure>
     </div>
 
     <script>
-      (function(){
+      (function () {
         const outputElem = document.querySelector('.output');
-        window.addEventListener('scroll',function(){
-          outputElem.innerHTML = window.pageYOffset;
-        },false)
+        const ilbuniElem = document.querySelector('.ilbuni');
+        function showValue() {
+          // outputElem.innerHTML = window.pageYOffset;
+          // !!!offsetTop은 처음 위치만 가져온다.
+          // outputElem.innerHTML = ilbuniElem.offsetTop;
+
+          /**
+           * @description getBoundingClientRect().top;
+           * getBoundingClientRect().top 은
+           * ilbuniElem의 엘리먼트 위치가 어디에 있는지 알려준다.
+           */
+          let posY = ilbuniElem.getBoundingClientRect().top;
+          outputElem.innerHTML = posY;
+
+          // window.innerHeight -> 현재 보고있는 화면 높이
+          console.log(window.innerHeight);
+          
+          if (posY < window.innerHeight / 5) {
+            ilbuniElem.classList.add('zoom');
+          } else {
+            ilbuniElem.classList.remove('zoom');
+          }
+        }
+        window.addEventListener(
+          'scroll',
+          function () {
+            showValue();
+          },
+          false
+        );
       })();
     </script>
   </body>
