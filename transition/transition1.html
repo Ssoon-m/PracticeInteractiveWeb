@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @keyframes ball-ani {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(200px, 200px);
+        }
+      }
       .ball {
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 30px;
         height: 30px;
         border-radius: 50%;
         background: red;
         transition: 0.5s;
+        animation: ball-ani 1s infinite alternate;
       }
       .ball.end {
         background: dodgerblue;
@@ -28,8 +40,8 @@
           e.clientY - 15
         }px)`;
       });
-      // transitionend 이벤트가 있다! 말 그대로 트랜지션이 끝났을때 
-      // 이벤트 발생 
+      // transitionend 이벤트가 있다! 말 그대로 트랜지션이 끝났을때
+      // 이벤트 발생
       ballElem.addEventListener('transitionend', function (e) {
         ballElem.classList.add('end');
         console.log(e.elapsedTime);
