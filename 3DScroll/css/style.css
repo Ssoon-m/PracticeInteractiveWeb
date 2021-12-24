@@ -1,0 +1,78 @@
+body {
+  height: 500vw;
+  font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic,
+    'Malgun Gothic', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  color: #555;
+  background: #fff000;
+}
+
+.world {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateZ(-490vw);
+  /* world에 perspective를 줘서 안에 있는 영역이 다 3D효과를 보게 했음*/
+  /* 하지만, 안에있는 카드가 제대로 3D효과로 적용되게 하려면 중간에 걸친(.stage) */
+  /* 엘리먼트들에 preserve-3d를 적용해줘야 3D효과가 전파가 된다.*/
+  transform-style: preserve-3d;
+}
+
+.house {
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+.wall {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+}
+.wall-left {
+  /* left: -500vw; */
+  width: 1000vw;
+  background: #f8f8f8;
+  transform: rotateY(90deg) translateZ(-500vw);
+}
+.wall-right {
+  width: 1000vw;
+  background: #f8f8f8;
+  transform: rotateY(90deg) translateZ(-400vw);
+}
+.wall-front-a {
+  transform: translateZ(300vw);
+}
+.wall-front-b {
+  transform: translateZ(50vw);
+}
+.wall-front-c {
+  transform: translateZ(-200vw);
+}
+.wall-front-d {
+  transform: translateZ(-500vw);
+}
+
+.wall-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wall-title {
+  font-size: 5rem;
+}
