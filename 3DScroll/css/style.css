@@ -22,7 +22,7 @@ body {
   top: 0;
   width: 100vw;
   height: 100vh;
-  transform: translateZ(-490vw);
+  /* transform: translateZ(-490vw); */
   /* world에 perspective를 줘서 안에 있는 영역이 다 3D효과를 보게 했음*/
   /* 하지만, 안에있는 카드가 제대로 3D효과로 적용되게 하려면 중간에 걸친(.stage) */
   /* 엘리먼트들에 preserve-3d를 적용해줘야 3D효과가 전파가 된다.*/
@@ -32,6 +32,7 @@ body {
 .house {
   width: 100vw;
   height: 100vh;
+  transform: translateZ(-490vw);
   transform-style: preserve-3d;
 }
 .wall {
@@ -75,4 +76,20 @@ body {
 
 .wall-title {
   font-size: 5rem;
+}
+
+.progress-bar-con{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index:100;
+  width: 100vw;
+  height: 5px;
+  background: #555;
+}
+
+.progress-bar{
+  width: 0;
+  height: 100%;
+  background: #00a8ff;
 }
