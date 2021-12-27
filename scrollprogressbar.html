@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 300vh;
+      overflow: hidden;
+    }
+    .progressbar_box{
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100vw;
+      height: 5px;
+      z-index: 100;
+      background-color: #555;
+    }
+    .progressbar{
+      width: 30%;
+      height: 100%;
+      background-color: aqua;
+    }
+    .modal{
+      position:fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(85, 85, 85,0.4);
+      z-index: 1000;
+    }
+    .modal-window{
+      width: 400px;
+      height: 400px;
+      background-color: white;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="progressbar_box">
+    <div class="progressbar"></div>
+  </div>
+  <div>
+    adsfasdfasdfadsfasd
+    fadsf
+    ads
+    fadsffa
+    dsf
+    asd
+    fadsffa
+  </div>
+  <div class="modal">
+    <div class="modal-window">
+
+    </div>
+  </div>
+  <script>
+    const maxScroll = document.body.offsetHeight - window.innerHeight
+    let modalwidth = document.querySelector('.modal');
+    window.addEventListener('scroll',function(){
+      console.log(modalwidth.style)
+      const progressbarElem = document.querySelector('.progressbar');
+      progressbarElem.style.width = `${pageYOffset/maxScroll*100}%`
+    })
+  </script>
+</body>
+</html>
