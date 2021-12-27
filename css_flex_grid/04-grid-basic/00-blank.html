@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+		.grid-container{
+			display: grid;
+			/* grid-template-columns: 100px 300px 200px; */
+
+			/* 1fr 은 비율 이라고 한다. fraction : 비. 비율. 분수. 부분*/
+			/* grid-template-columns: 1fr 2fr 1fr; */
+			grid-template-columns: repeat(3,1fr);
+
+			/* grid-template-rows: 200px 200px auto; */
+			/* grid-template-rows:repeat(2,1fr); */
+
+			/* minmax라는 함수가 있다. 최소 100px, 
+			100px넘어가면 알아서 맞춰지게 */
+			grid-template-rows: repeat(3,minmax(100,auto));
+			/* 그리드는 기본적으로 컨테이너를 꽉 채운다.
+			굳이 rows를 주지 않아도 컨테이너 높이가 확보가 되어 있다면
+			꽉 채워서 격자 형태를 만들어 준다. */
+			height: 100vh;
+		}
+		.grid-item{
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+	</div>
+</body>
+</html>

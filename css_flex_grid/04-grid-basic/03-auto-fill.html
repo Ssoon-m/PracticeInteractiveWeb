@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+	/* auto-fill, auto-fit */
+	.grid-container {
+		display: grid;
+			/* auto-fill은 컬럼의 개수를 미리 정해주지 않고
+			자동으로 채워 나가게 할 수 있다.
+			minmax로 최소를 20%로 해놨다.
+			30%로 하면 세개까지 생기고 다음줄로 넘어갈 것이다.*/
+			/* grid-template-columns: repeat(auto-fill,minmax(20%,auto)); */
+
+			/* 그리고 만약 고정픽셀로 할 경우엔 컬럼이 반응형으로도 된다.*/
+			/* 그리고 auto-fit은 개수가 모자를때 꽉 채워준다!!
+			flex-grow생각하면 될듯*/
+		grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+	}
+	</style>
+</head>
+<body>
+	<div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+	</div>
+</body>
+</html>

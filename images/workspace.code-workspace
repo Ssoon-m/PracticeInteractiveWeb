@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../인터렉티브 웹 개발"
+		},
+		{
+			"path": "../../../Downloads/css_flex_grid/03-flex-page"
+		},
+		{
+			"path": "../../../Downloads/css_flex_grid/04-grid-basic"
+		},
+		{
+			"path": "../../../Downloads/css_flex_grid/05-grid-page"
+		},
+		{
+			"path": "../../../Downloads/css_flex_grid/06-grid-samples"
+		},
+		{
+			"path": "../../../Downloads/css_flex_grid/07-grid-for-ie"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "06-grid-samples"
+	}
+}
