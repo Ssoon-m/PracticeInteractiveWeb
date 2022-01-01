@@ -3,14 +3,14 @@
 	display: flex;
 }
 .menu-item {
-	/* flex-grow: 1; */
-	width: 25%;
+	flex: 1;
+	/* width: 25%; */
 	background: gold;
 	transition: 0.5s;
 }
 .menu-item:hover {
-	/* flex-grow: 1.5; */
-	width: 35%;
+	flex: 1.5;
+	/* width: 35%; */
 	background: crimson;
 }
 .menu-link {

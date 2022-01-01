@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .grid_items{
+      background-color: aqua;
+      border: 1px solid black;
+    }
+    .grid_container{
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 20% 1fr 20%;
+      /* grid-template-columns: repeat(3,1fr); */
+      grid-template-rows: repeat(2,minmax(200px,auto));
+    }
+    .grid_items:nth-child(1){
+      grid-column: 1/4;
+    }
+    .grid_items:nth-child(2){
+      grid-column: 1/2;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid_container">
+    <div class="grid_items">a</div>
+    <div class="grid_items">b</div>
+    <div class="grid_items">c</div>
+    <div class="grid_items">d</div>
+    <div class="grid_items">e</div>
+    <div class="grid_items">f</div>
+    <div class="grid_items">g</div>
+    <div class="grid_items">h</div>
+  </div>
+</body>
+</html>
